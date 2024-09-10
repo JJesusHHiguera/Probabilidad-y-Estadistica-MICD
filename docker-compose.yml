@@ -6,7 +6,7 @@ services:
     volumes:
       - ./notebooks:/home/jovyan/work # Montamos un volumen para los notebooks
     environment:
-      - JUPYTER_TOKEN=
+      - JUPYTER_PASSWORD=
 
   jupyter-pyspark:
     image: jupyter/pyspark-notebook:latest
@@ -15,4 +15,4 @@ services:
     volumes:
       - ./spark-notebooks:/home/jovyan/work
     environment:
-      - JUPYTER_TOKEN=
+      - JUPYTER_PASSWORD=
