@@ -1,0 +1,18 @@
+services:
+  jupyter:
+    image: jupyter-git-wget:latest # Usamos la imagen creada anteriormente
+    ports:
+      - "8888:8888" # Mapeamos el puerto del contenedor al local
+    volumes:
+      - ./notebooks:/home/jovyan/work # Montamos un volumen para los notebooks
+    environment:
+      - JUPYTER_TOKEN=
+
+  jupyter-pyspark:
+    image: jupyter/pyspark-notebook:latest
+    ports:
+      - "8889:8888" #Mapeamos a un puerto que no interfiera con el de la otra imagen
+    volumes:
+      - ./spark-notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=
